@@ -1,0 +1,148 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    background: #FFF;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titulo{
+    height: 69px;
+    font-weight: bold;
+    line-height: 42px;
+    font-size: 1em;
+    text-transform: uppercase;
+    color:#004E89;
+    margin: 49px auto 92px auto;
+}
+
+.obs{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    max-width: 90%;
+    text-align: left;
+    margin: 0 0 37px 10%;
+    color: #FF6B35;
+}
+
+.cards{
+    max-width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}
+  
+.card {
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    color: #000;
+    width: 350px;
+    height: 150px;
+}
+  
+.card_info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards_nome{
+    width: 220px;
+    height: 44px;
+    font-weight: bold;
+    margin: 19px 0 13px 36px;
+}
+
+.email{
+    width: 190px;
+    height: 30px;
+    margin: 13px auto 31px 36px;
+}
+
+.icons{
+    display: flex;
+    margin-top: 6px;
+}
+
+.icon{
+    margin: 15px;
+    width: 14px;
+    height: 18px;
+    cursor: pointer;
+}
+  /* modal **/
+.modal-overlay{
+    background-color: rgba(0, 0,0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    opacity: 0;
+    visibility: hidden;
+}
+  
+.modal{
+    background-color: white;
+    width: 600px;
+    height: 300px;
+    margin: 5vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal .titulo{
+    height: 69px;
+    font-weight: bold;
+    line-height: 42px;
+    font-size: 1em;
+    text-transform: uppercase;
+    color:#004E89;
+}
+
+.msg{
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 300px;
+}
+
+.msg .nome{
+    color: #004E89;
+}
+
+.btn{
+    width: 160px;
+    height: 60px;
+    margin: 16px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #004E89;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: #FF6B35;
+}

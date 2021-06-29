@@ -1,73 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/participantes.css">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/participantes.css" />
     <title>Document</title>
-</head>
-<body>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      ;(function () {
+        // https://dashboard.emailjs.com/admin/integration
+        emailjs.init('user_wHdwniZsYRgSqrGrYNjgv')
+      })()
+    </script>
+  </head>
+  <body onload="listar()">
     <div class="titulo">
-        <h1>Amigo secreto Loopis</h1>
+      <h1>Amigo secreto Loopis</h1>
     </div>
     <div class="obs">
-        <p>OBS: o amigo secreto só pode ocorrer com no mínimo 3 pessoas.</p>
+      <p>OBS: o amigo secreto só pode ocorrer com no mínimo 3 pessoas.</p>
     </div>
-    <section class="cards">
-        <div class="card" id="card-participantes">
-          <div class="card_info">
-            <div class="cards_nome">
-                <p>Railson Mateus</p>
-            </div>
-            <div class="icons">
-                <i id="editar_card" class="icon">
-                    <img src="../assets/Vectoreditar.png" alt="editar">
-                </i>
-                <i id="excluir_card" class="icon">
-                    <img src="../assets/Vectorexcluir.png" alt="excluir">
-                </i>
-            </div>
-            <div class="email">
-                <p>raylsomatheus@hotmail.com</p>
-            </div>
-          </div>
-        </div>
 
-      </section>
+    <section id="cards-container">
+      <div class="btn">
+        <button onclick="adicionar()">Adicionar</button>
+        <button onclick="pairs()">Sortear</button>
+      </div>
+    </section>
 
     <div class="modal-overlay" id="modal-overlay-excluir">
-        <div class="modal">
-            <div class="titulo">
-                <h1>Amigo secreto Loopis</h1>
-            </div>
-            <div class="msg">
-                <p>Deseja realmente excluir <span class="nome">Ricart</span>?</p>
-            </div>
-            <div class="btns">
-                <button class="btn" id="btn-sim">Sim</button>
-                <button class="btn" onclick="cancelar('modal-overlay-excluir')">Cancelar</button>
-            </div>
+      <div class="modal">
+        <div class="titulo">
+          <h1>Amigo secreto Loopis</h1>
         </div>
+        <div class="msg">
+          <p>Deseja realmente excluir <span class="nome">Ricart</span>?</p>
+        </div>
+        <div class="btns">
+          <button class="btn" id="btn-sim" onclick="handleDeletar()">
+            Sim
+          </button>
+          <button class="btn" id="btn-cancelar" onclick="cancelar()" alt="1">
+            Cancelar
+          </button>
+        </div>
+      </div>
     </div>
 
-    <div class="modal-overlay" id="modal-overlay-excluir-sucesso">
-        <div class="modal">
-            <div class="titulo">
-                <h1>Amigo secreto Loopis</h1>
-            </div>
-            <div class="obs">
-                <p>Excluido com sucesso!</p>
-            </div>
-    
-            <div class="btn">
-                <a href="../HTML/participantes.html">
-                    <button>Ok</button>
-                </a>
-            </div>
+    <div class="modal-overlay" id="modal-overlay-sucesso">
+      <div class="modal">
+        <div class="titulo">
+          <h1>Amigo secreto Loopis</h1>
         </div>
+        <div class="obs">
+          <p>Excluido com sucesso!</p>
+        </div>
+
+        <div class="btn">
+          <button onclick="sucesso()">Ok</button>
+        </div>
+      </div>
     </div>
 
-    <script src="../JS/participante.js"></script>
-</body>
+    <div class="modal-overlay" id="modal-overlay-sorteio-email">
+      <div class="modal">
+        <div class="titulo">
+          <h1>Amigo secreto Loopis</h1>
+        </div>
+        <div class="obs">
+          <h2>Sorteio realisado com sucesso!</h2>
+          <p>Os participantes serão notificados por email</p>
+        </div>
+
+        <div class="btn">
+          <button onclick="salvo()">Ok</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay-sorteio-sucesso">
+      <div class="modal">
+        <div class="titulo">
+          <h1>Amigo secreto Loopis</h1>
+        </div>
+        <div class="obs">
+          <h2>Sorteio realisado com sucesso!</h2>
+        </div>
+        <div class="result" id="result"></div>
+
+        <div class="btn">
+          <button onclick="salvo()">Ok</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../JS/participantes.js"></script>
+  </body>
 </html>

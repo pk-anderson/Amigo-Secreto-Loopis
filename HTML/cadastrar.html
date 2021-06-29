@@ -1,71 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amigo Secreto - Cadastrar</title>
-    <link rel="stylesheet" href="cadastrarstyle.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">    
-</head>
-<body>
+    <link rel="stylesheet" href="../CSS/cadastrarstyle.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <section>
-        <div id="container">
-            <div id="title">
-                <h1>Amigo secreto loopis</h1>
-            </div>
-            <div id="textonome">
-                <p>Nome</p>
-            </div>
-            <div id="inputnome">
-                <input type="text" name="nome" id="nome">
-            </div>
-            <div id="textoemail">
-                <p>Email</p>
-            </div>
-            <div id="inputemail">
-                <input type="text" name="email" id="email">
-            </div>
-            <div id="cadastrar">
-                <button id="cadastrar" onclick="">Cadastrar</button>
-            </div>
-            <div id="cadastraroutro">
-                <button id="cadastraroutro" onclick="">Cadastrar e Adicionar Outro</button>
-            </div>
+      <div id="container">
+        <div id="title">
+          <h1>Amigo secreto loopis</h1>
         </div>
+        <div id="textonome">
+          <p>Nome</p>
+        </div>
+        <div id="inputnome">
+          <input
+            type="text"
+            name="nome"
+            id="nome"
+            required=""
+            onblur="Validate.isName(this)"
+          />
+        </div>
+        <div id="textoemail">
+          <p>Email</p>
+        </div>
+        <div id="inputemail">
+          <input
+            type="text"
+            name="email"
+            id="email"
+            required=""
+            onblur="Validate.isEmail(this)"
+          />
+        </div>
+        <div id="cadastrar">
+          <button id="cadastrar" onclick="cadastrar(0)">Cadastrar</button>
+        </div>
+        <div id="cadastraroutro">
+          <button id="cadastraroutro" onclick="cadastrar(1)">
+            Cadastrar e Adicionar Outro
+          </button>
+        </div>
+      </div>
     </section>
     <div class="modal-overlay" id="modal-overlay-cadastrar-sucesso">
-        <div class="modal">
-            <div class="titulo">
-                <h1>Amigo secreto Loopis</h1>
-            </div>
-            <div class="obs">
-                <p>Cadastrado com sucesso!</p>
-            </div>
-    
-            <div class="btn">
-                <a href="../HTML/participantes.html">
-                    <button>Ok</button>
-                </a>
-            </div>
+      <div class="modal">
+        <div class="titulo">
+          <h1>Amigo secreto Loopis</h1>
         </div>
-    </div>
-    <div class="modal-overlay" id="modal-overlay-cadastraroutro-sucesso">
-        <div class="modal">
-            <div class="titulo">
-                <h1>Amigo secreto Loopis</h1>
-            </div>
-            <div class="obs">
-                <p>Cadastrado com sucesso!</p>
-            </div>
-            <div class="btn">
-                <a href="../HTML/cadastrar.html">
-                    <button>Ok</button>
-                </a>
-            </div>
+        <div class="obs">
+          <p>Cadastrado com sucesso!</p>
         </div>
+
+        <div class="btn">
+          <button onclick="cadastroSucesso()">Ok</button>
+        </div>
+      </div>
     </div>
-    <script src="cadastrar.js"></script>
-</body>
+    <script src="../JS/validacao.js"></script>
+    <script src="../JS/cadastrar.js"></script>
+  </body>
 </html>
